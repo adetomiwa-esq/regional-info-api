@@ -57,7 +57,7 @@ export const getSingleRegion = async (req, res) => {
   }
 };
 
-export const editTransaction = async (req, res, next) => {
+export const editRegion = async (req, res, next) => {
   try {
     const region = await Region.findById(req.params.id);
 
