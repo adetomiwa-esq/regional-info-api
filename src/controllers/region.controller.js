@@ -56,3 +56,51 @@ export const getSingleRegion = async (req, res) => {
     });
   }
 };
+
+export const editTransaction = async (req, res, next) => {
+  try {
+    const region = await Region.findById(req.params.id);
+
+    if (!region) {
+      return res.status(404).json({
+        message: `Region with the id ${req.params.id} not found`,
+      });
+    }
+
+    const updatedRegion = await Region.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      {
+        new: true,
+      },
+    );
+
+    res.status(200).json(updatedRegion);
+  } catch (error) {
+    res.status(500).json({
+      message: `Something went wrong! Failed to edit region with id- ${req.params.id}`,
+    });
+  }
+};
+
+export const deleteRegion = async (req, res) => {
+  try {
+    const region = await Region.findById(req.params.id);
+
+    if (!region) {
+      return res.status(404).json({
+        message: `Region with the id ${req.params.id} not found`,
+      });
+    }
+
+    await Region.findOneAndDelete({ _id: req.params.id });
+
+    res.status(200).json({
+      msg: `region with id ${req.params.id} has been successfully deleted`,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: `Something went wrong! Failed to delete region with id- ${req.params.id}`,
+    });
+  }
+};
