@@ -1,11 +1,6 @@
 import mongoose from "mongoose";
 
 const regionSchema = mongoose.Schema({
-  name: {
-    //name of region
-    type: String,
-    required: true,
-  },
   population: {
     household_count: {
       type: Number,
@@ -36,27 +31,11 @@ const regionSchema = mongoose.Schema({
       },
     },
   },
-  public_facilities: {
-    schools: [
+  healthFacilities: {
+    primaryHealthFacilities: [
       {
         name: {
           type: String,
-          required: true,
-        },
-        ownership: {
-          type: String, //can be government owned or private
-          required: true,
-        },
-      },
-    ],
-    hospitals: [
-      {
-        name: {
-          type: String,
-          required: true,
-        },
-        ownership: {
-          type: String, //can be government owned or private
           required: true,
         },
         address: {
@@ -65,6 +44,130 @@ const regionSchema = mongoose.Schema({
         },
       },
     ],
+
+    stateHospitals: [
+      {
+        name: {
+          type: String,
+          required: true,
+        },
+        address: {
+          type: String,
+          required: true,
+        },
+      },
+    ],
+  },
+  geography: {
+    total_land_area: {
+      type: String,
+      required: true,
+    },
+    major_traditional_quarters: {
+      type: String,
+      required: true,
+    },
+  },
+  politicalStructure: {
+    politicalWards: {
+      type: String,
+      required: true,
+    },
+    administrative_subdivisions: {
+      type: String,
+      required: true,
+    },
+  },
+  educationInfrastructure: {
+    publicPrimary: {
+      total: {
+        type: Number,
+        required: true,
+      },
+      schools: [
+        {
+          name: {
+            type: String,
+            required: true,
+          },
+          address: {
+            type: String,
+          },
+        },
+      ],
+    },
+
+    privatePrimary: {
+      total: {
+        type: Number,
+        required: true,
+      },
+      schools: [
+        {
+          name: {
+            type: String,
+            required: true,
+          },
+          address: {
+            type: String,
+          },
+        },
+      ],
+    },
+
+    publicSecondary: {
+      total: {
+        type: Number,
+        required: true,
+      },
+      schools: [
+        {
+          name: {
+            type: String,
+            required: true,
+          },
+          address: {
+            type: String,
+          },
+        },
+      ],
+    },
+
+    HigherInstitutions: {
+      total: {
+        type: Number,
+        required: true,
+      },
+      schools: [
+        {
+          name: {
+            type: String,
+            required: true,
+          },
+          address: {
+            type: String,
+          },
+        },
+      ],
+    },
+
+    collegesOfHealth: {
+      total: {
+        type: Number,
+        required: true,
+      },
+      schools: [
+        {
+          name: {
+            type: String,
+            required: true,
+          },
+          address: {
+            type: String,
+          },
+        },
+      ],
+    },
   },
 });
 
