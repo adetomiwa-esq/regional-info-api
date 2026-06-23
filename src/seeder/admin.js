@@ -24,22 +24,27 @@ await Region.create({
       {
         name: "Odo-Ori Community Primary School",
         ownership: "Government",
+        address: "School Road, Odo-Ori, Iwo, Osun State",
       },
       {
         name: "Baptist Primary School Odo-Ori",
         ownership: "Government",
+        address: "Baptist Church Street, Odo-Ori, Iwo, Osun State",
       },
       {
         name: "Divine Wisdom Nursery and Primary School",
         ownership: "Private",
+        address: "Odo-Ori Market Road, Iwo, Osun State",
       },
       {
         name: "Success Model College",
         ownership: "Private",
+        address: "Success Avenue, Odo-Ori Junction, Iwo, Osun State",
       },
       {
         name: "Odo-Ori Grammar School",
         ownership: "Government",
+        address: "Grammar School Road, Odo-Ori, Iwo, Osun State",
       },
     ],
     hospitals: [

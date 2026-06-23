@@ -1,6 +1,11 @@
 import mongoose from "mongoose";
 
 const regionSchema = mongoose.Schema({
+  name: {
+    //name of region
+    type: String,
+    required: true,
+  },
   population: {
     household_count: {
       type: Number,
@@ -44,7 +49,7 @@ const regionSchema = mongoose.Schema({
         },
       },
     ],
-    schools: [
+    hospitals: [
       {
         name: {
           type: String,
@@ -55,7 +60,7 @@ const regionSchema = mongoose.Schema({
           required: true,
         },
         address: {
-          type: String, //can be government owned or private
+          type: String,
           required: true,
         },
       },
