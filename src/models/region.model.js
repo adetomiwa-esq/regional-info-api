@@ -36,9 +36,27 @@ const regionSchema = mongoose.Schema({
       {
         name: {
           type: String,
+          required: true,
         },
         ownership: {
           type: String, //can be government owned or private
+          required: true,
+        },
+      },
+    ],
+    schools: [
+      {
+        name: {
+          type: String,
+          required: true,
+        },
+        ownership: {
+          type: String, //can be government owned or private
+          required: true,
+        },
+        address: {
+          type: String, //can be government owned or private
+          required: true,
         },
       },
     ],
