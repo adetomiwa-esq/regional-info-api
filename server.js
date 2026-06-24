@@ -14,8 +14,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://pop-tree-fe.vercel.app",
-      "https://www.tabeautypoptree.com",
+      "https://regional-information-system.netlify.app",
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
   }),
